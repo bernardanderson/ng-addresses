@@ -1,7 +1,19 @@
 <div class="panel panel-default">
   <div class="panel-heading">Your Current Contacts</div>
     <div class="panel-body">
-      <p ng-repeat="singleAddress in addressList">{{singleAddress}}</p>
+      <div class="row">
+        <div class="col-xs-3"><h4>Name</h4></div>
+        <div class="col-xs-3"><h4>Address</h4></div>
+        <div class="col-xs-3"><h4>Telephone #</h4></div>
+        <div class="col-xs-3"><h4>Email Address</h4></div>
+      </div>
+      <div class="row" ng-repeat="singleAddress in addressList" ng-class-odd="'alert-info'">
+        <div class="col-xs-3">{{singleAddress.name}}</div>
+        <div class="col-xs-3">{{singleAddress.address}}</div>
+        <div class="col-xs-3">{{singleAddress.telephone}}</div>
+        <div class="col-xs-3">{{singleAddress.email}}</div>
+      </div>
+      </div>
     </div>
   </div>
 </div>

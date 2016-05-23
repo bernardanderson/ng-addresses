@@ -13,9 +13,10 @@ app.config(function($routeProvider) {
       templateUrl: "partials/addressesNewContact.html",
       controller: "newEntryController"
     }).
-    otherwise("/addresses/list")
-})
+    otherwise("/addresses/list");
+});
 
+// This factory allows the storing and retrieval of the addresses across all controllers
 app.factory('AddressListService', function(){
   return {
     currentAddresses: [
@@ -29,5 +30,5 @@ app.factory('AddressListService', function(){
     update: function(sentNewAddressObject) {
       this.currentAddresses.push(sentNewAddressObject);
     }
-  }
+  };
 });
