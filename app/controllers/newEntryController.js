@@ -1,17 +1,8 @@
 "use strict";
 
-app.controller("newEntryController", function($scope){
+app.controller("newEntryController", function($scope, AddressListService){
 
-  $scope.newAddress = {};
-
-  $scope.addressList = [
-    {
-      name: "Bernie Anderson",
-      address: "Home",
-      telephone: "615-911-4111",
-      email: "junk@hotmail.com"
-    }
-  ];
+  $scope.newAddressObject = {};
 
   $scope.entryItems = [
   {
@@ -41,9 +32,12 @@ app.controller("newEntryController", function($scope){
   }];
 
   $scope.addNewAddress = function() {
-    $scope.addressList.push($scope.newAddress);
-    console.log("You added a new address!", $scope.addressList);
-    $scope.newAddress = "";
+    AddressListService.update($scope.newAddressObject);
+    // $scope.addressList.push($scope.newAddress);
+    console.log("You added a new address!");
+    console.log(AddressListService.currentAddresses);
+
+    $scope.newAddressObject = "";
   };
 
 });

@@ -1,14 +1,14 @@
 <div class="panel panel-default">
-<div class="panel-heading">Enter a New Contact</div>
-  <div class="panel-body">
-    <form>
-      <div class="form-group" ng-repeat="inputItem in entryItems">
-      <div class="col-xs-{{inputItem.inputWidth}}">
-        <input class="form-control" type="{{inputItem.inputType}}" placeholder="{{inputItem.inputPlaceholder}}" ng-model="newAddress[inputItem.fieldVariable]"/>
-      </div>
-      </div>
-      <button class="btn btn-default" ng-click="addNewAddress()">Submit</button>
-    </form>
+  <div class="panel-heading">Enter a New Contact</div>
+    <div class="panel-body">
+      <form>
+        <div class="form-group" ng-repeat="inputItem in entryItems">
+        <div class="col-xs-{{inputItem.inputWidth}}">
+          <input class="form-control" type="{{inputItem.inputType}}" placeholder="{{inputItem.inputPlaceholder}}" ng-model="newAddressObject[inputItem.fieldVariable]"/>
+        </div>
+        </div>
+        <button class="btn btn-default" ng-click="addNewAddress()">Submit</button>
+      </form>
+    </div>
   </div>
-</div>
 </div>
