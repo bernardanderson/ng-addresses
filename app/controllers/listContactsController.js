@@ -12,7 +12,6 @@ app.controller("listContactsController", function($scope, XHRCalls, AddressListS
     let deleteItemID = sentEvent.currentTarget.attributes['fb-id'].value;
     XHRCalls.xhrAddresses(deleteItemID, "delete");
     AddressListService.deleteAddressArrayItem(deleteItemID);
-    console.log(AddressListService.currentAddresses);
   };
 
   $scope.listAddress();
