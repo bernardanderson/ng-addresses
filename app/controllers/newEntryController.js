@@ -1,8 +1,13 @@
 "use strict";
 
-app.controller("newEntryController", function($scope, $location, AddressListService){
+app.controller("newEntryController", function($scope, $location, AddressListService, XHRCalls){
 
-  $scope.newAddressObject = {};
+  $scope.newAddressObject = {
+    name: null,
+    address: null,
+    telephone: null,
+    email: null
+  };
 
   $scope.entryItems = [
   {
@@ -32,9 +37,10 @@ app.controller("newEntryController", function($scope, $location, AddressListServ
   }];
 
   $scope.addNewAddress = function() {
-    AddressListService.update($scope.newAddressObject);
+    AddressListService.updateAddressArray($scope.newAddressObject);
+    XHRCalls.xhrAddresses("", "post", $scope.newAddressObject);
     $scope.newAddressObject = "";
-    $location.path('#/addresses/list');
+    $location.path('/addresses/list');
   };
 
 });

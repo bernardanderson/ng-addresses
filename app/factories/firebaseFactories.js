@@ -1,6 +1,6 @@
 "use strict";
 
-// This factory allows the storing and retrieval of the addresses across all controllers
+// This factory allows the storing, retrieval and clearing of the addresses across all controllers
 app.factory('AddressListService', function(){
 
   return {
@@ -11,30 +11,37 @@ app.factory('AddressListService', function(){
       this.currentAddresses.splice(0);
     },
 
-    update: function(sentNewAddressObject) {
+    updateAddressArray: function(sentNewAddressObject) {
       this.currentAddresses.push(sentNewAddressObject);
     }
   };
-
 });
 
 app.factory('XHRCalls', function($q, $http, AddressListService){
 
   return {
 
-    getAddresses: function(sentID) {
+    xhrAddresses: function(sentID, xhrMethod, sentData) {
 
       return $q(function(resolve, reject){
 
-        $http.get(`https://ba-addressbook.firebaseio.com/addressBook/${sentID}.json`)
-        .success(function(addressCollection){
-          Object.keys(addressCollection).forEach(function(key){
-            addressCollection[key].id = key;
-            AddressListService.update(addressCollection[key]);
-          });
-          resolve();
-        })
-        .error(function(error) {
+        $http[xhrMethod](`https://ba-addressbook.firebaseio.com/addressBook/${sentID}.json`, sentData)
+        .success(function(returnedItem){
+
+          if (xhrMethod === "get" && sentID === "") {
+            Object.keys(returnedItem).forEach(function(key){
+              returnedItem[key].id = key;
+              AddressListService.updateAddressArray(returnedItem[key]);
+            });
+            resolve();
+          } else if (xhrMethod === "delete") {
+            resolve();
+          } else if (xhrMethod === "post") {
+            sentData.id = returnedItem;
+            AddressListService.updateAddressArray(sentData);
+            resolve();
+          }
+        }).error(function(error) {
           reject(error);
         });
       });
