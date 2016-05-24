@@ -13,7 +13,19 @@ app.factory('AddressListService', function(){
 
     updateAddressArray: function(sentNewAddressObject) {
       this.currentAddresses.push(sentNewAddressObject);
+    },
+  
+    deleteAddressArrayItem: function(sentID) {
+      for (var i = 0; i < this.currentAddresses.length; i++) {
+        for (var key in this.currentAddresses[i] ) {
+          if (this.currentAddresses[i][key] === sentID) {
+            this.currentAddresses.splice(i, 1);
+            break;
+          };
+        }
+      }
     }
+
   };
 });
 

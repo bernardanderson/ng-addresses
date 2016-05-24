@@ -9,8 +9,10 @@ app.controller("listContactsController", function($scope, XHRCalls, AddressListS
   };
 
   $scope.deleteAddress = function(sentEvent) {
-    let deleteItem = sentEvent.currentTarget.attributes['fb-id'].value;
-    XHRCalls.xhrAddresses(deleteItem, "delete");
+    let deleteItemID = sentEvent.currentTarget.attributes['fb-id'].value;
+    XHRCalls.xhrAddresses(deleteItemID, "delete");
+    AddressListService.deleteAddressArrayItem(deleteItemID);
+    console.log(AddressListService.currentAddresses);
   };
 
   $scope.listAddress();
