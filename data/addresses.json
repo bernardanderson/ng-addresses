@@ -1,0 +1,28 @@
+{
+  "addressBook": {
+    "address0": {
+      "name": "Thomas Jackson",
+      "address": "Home",
+      "telephone": "111-911-4111",
+      "email": "junk@hotmail.com"
+    },
+    "address1": {
+      "name": "Billy Bobob Brain",
+      "address": "Music Row",
+      "telephone": "1-800-406-6120",
+      "email": "junk1@hotmail.com"
+    },
+    "address2": {
+      "name": "Carter Hall",
+      "address": "Research Lab",
+      "telephone": "415-174-2965",
+      "email": "junk2@hotmail.com"
+    },
+    "address3": {
+      "name": "Hal Jordan",
+      "address": "Airforce Base",
+      "telephone": "994-174-2965",
+      "email": "junk3@hotmail.com"
+    }
+  }
+}
