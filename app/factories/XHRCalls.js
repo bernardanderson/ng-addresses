@@ -25,7 +25,7 @@ app.factory('XHRCalls', function($q, $http, AddressListService){
             resolve();
 
           } else if (xhrMethod === "post") {
-            sentData.id = returnedItem;
+            sentData.id = returnedItem.name;
             AddressListService.updateAddressArray(sentData);
             resolve();
           }

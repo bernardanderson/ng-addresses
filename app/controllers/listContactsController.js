@@ -2,10 +2,10 @@
 
 app.controller("listContactsController", function($scope, XHRCalls, AddressListService){
 
-  $scope.listAddress = function() {
-    AddressListService.clearAddressArray();
-    XHRCalls.xhrAddresses("", "get");
-    $scope.addressList = AddressListService.currentAddresses;
+  let listAddress = function() {
+      AddressListService.clearAddressArray();
+      XHRCalls.xhrAddresses("", "get");
+      $scope.addressList = AddressListService.currentAddresses;
   };
 
   $scope.deleteAddress = function(sentEvent) {
@@ -14,6 +14,6 @@ app.controller("listContactsController", function($scope, XHRCalls, AddressListS
     AddressListService.deleteAddressArrayItem(deleteItemID);
   };
 
-  $scope.listAddress();
+  listAddress();
 
 });

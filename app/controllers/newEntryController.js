@@ -40,7 +40,7 @@ app.controller("newEntryController", function($scope, $location, AddressListServ
     AddressListService.updateAddressArray($scope.newAddressObject);
     XHRCalls.xhrAddresses("", "post", $scope.newAddressObject);
     $scope.newAddressObject = "";
-    $location.path('/addresses/list');
+    $location.path('#/addresses/list');
   };
 
 });
