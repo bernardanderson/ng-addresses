@@ -2,17 +2,19 @@
   <div class="panel-heading">Your Current Contacts</div>
     <div class="panel-body">
       <div class="row">
-        <div class="col-xs-2"><h4>Name</h4></div>
+        <div class="col-xs-3"><h4>Name</h4></div>
         <div class="col-xs-3"><h4>Address</h4></div>
-        <div class="col-xs-3"><h4>Telephone #</h4></div>
+        <div class="col-xs-2"><h4>Telephone #</h4></div>
         <div class="col-xs-3"><h4>Email Address</h4></div>
       </div>
       <div class="row" ng-repeat="singleAddress in addressList" ng-class-odd="'alert-info'">
-        <div class="col-xs-2">{{singleAddress.name}}</div>
+        <div class="col-xs-3">{{singleAddress.name}}</div>
         <div class="col-xs-3">{{singleAddress.address}}</div>
-        <div class="col-xs-3">{{singleAddress.telephone}}</div>
+        <div class="col-xs-2">{{singleAddress.telephone}}</div>
         <div class="col-xs-3">{{singleAddress.email}}</div>
-        <div class="col-xs-1"><p class="btn btn-xs" fb-id="{{singleAddress.id}}"ng-click="deleteAddress($event)"><i class="fa fa-trash" aria-hidden="true"></i> Delete</p></div>
+        <div class="col-xs-1">
+        <p class="btn btn-xs" fb-id="{{singleAddress.id}}" ng-click=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
+        <p class="btn btn-xs" fb-id="{{singleAddress.id}}" ng-click="deleteAddress($event)"><i class="fa fa-trash" aria-hidden="true"></i></p></div>
       </div>
       </div>
     </div>
