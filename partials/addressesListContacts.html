@@ -2,10 +2,10 @@
   <div class="panel-heading">Your Current Contacts</div>
     <div class="panel-body">
       <div class="row">
-        <div class="col-xs-3"><h4>Name <span class="btn btn-xs"><i class="fa fa-sort" aria-hidden="true"></i></span></h4></div>
-        <div class="col-xs-3"><h4>Address <span class="btn btn-xs"><i class="fa fa-sort" aria-hidden="true"></i></span></h4></div>
-        <div class="col-xs-2"><h4>Telephone # <span class="btn btn-xs"><i class="fa fa-sort" aria-hidden="true"></i></span></h4></div>
-        <div class="col-xs-3"><h4>Email Address <span class="btn btn-xs"><i class="fa fa-sort" aria-hidden="true"></i></span></h4></div>
+        <div class="col-xs-3"><h4>Name <span class="btn btn-xs" ng-click="sortItem('name')"><i class="fa fa-sort" aria-hidden="true"></i></span></h4></div>
+        <div class="col-xs-3"><h4>Address <span class="btn btn-xs" ng-click="sortItem('address')"><i class="fa fa-sort" aria-hidden="true"></i></span></h4></div>
+        <div class="col-xs-2"><h4>Telephone # <span class="btn btn-xs" ng-click="sortItem('telephone')"><i class="fa fa-sort" aria-hidden="true"></i></span></h4></div>
+        <div class="col-xs-3"><h4>Email Address <span class="btn btn-xs" ng-click="sortItem('email')"><i class="fa fa-sort" aria-hidden="true"></i></span></h4></div>
       </div>
       <div class="row" ng-repeat="singleAddress in addressList" ng-class-odd="'alert-info'">
         <div class="col-xs-3">{{singleAddress.name}}</div>
