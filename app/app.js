@@ -2,7 +2,8 @@
 
 var app = angular.module("addressBookApp", ["ngRoute"]);
 
-// $routeProvider is a method in ngRoute
+// This setup allows the usage of partials for the various parts of the app.
+//  Note: $routeProvider is a method in ngRoute
 app.config(function($routeProvider) {
   $routeProvider.
     when("/addresses/list", {

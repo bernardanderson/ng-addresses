@@ -4,7 +4,7 @@
       <form>
         <div class="form-group" ng-repeat="inputItem in entryItems">
           <div class="col-xs-{{inputItem.inputWidth}}">
-          <!-- The ng-class checks to see if the length of the input field is nothing (or something) and assigns the appropriate BS class -->
+          <!-- The ng-class checks to see if the length of the input field is nothing (or something) and assigns the appropriate BootStrap class for coloring-->
             <input class="form-control" type="{{inputItem.inputType}}" placeholder="{{inputItem.inputPlaceholder}}" ng-model="newAddressObject[inputItem.fieldVariable]" ng-class="!newAddressObject[inputItem.fieldVariable].length ? 'alert-danger' : 'alert-success'" />
           </div>
         </div>
