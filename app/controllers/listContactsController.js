@@ -17,6 +17,7 @@ app.controller("listContactsController", function($scope, $filter, XHRCalls, Add
     let deleteItemID = sentEvent.currentTarget.attributes['fb-id'].value;
     XHRCalls.xhrAddresses(deleteItemID, "delete");
     AddressListService.deleteAddressArrayItem(deleteItemID);
+    $scope.addressList = AddressListService.currentAddresses;
   };
 
 // This allows the user to click on the arrow buttons to sort the address list by either acending/decending name, address, phone
