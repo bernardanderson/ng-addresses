@@ -13,7 +13,7 @@
         <div class="col-xs-2">{{singleAddress.telephone}}</div>
         <div class="col-xs-3">{{singleAddress.email}}</div>
         <div class="col-xs-1">
-        <p class="btn btn-xs" fb-id="{{singleAddress.id}}" ng-click=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
+        <a ng-href="#/addresses/{{singleAddress.id}}"><p class="btn btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p></a>
         <p class="btn btn-xs" fb-id="{{singleAddress.id}}" ng-click="deleteAddress($event)"><i class="fa fa-trash" aria-hidden="true"></i></p></div>
       </div>
       </div>

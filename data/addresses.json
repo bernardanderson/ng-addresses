@@ -2,27 +2,51 @@
   "addressBook": {
     "address0": {
       "name": "Thomas Jackson",
-      "address": "Home",
+      "address": "5332 West End, Nashville, TN 37209",
       "telephone": "111-911-4111",
-      "email": "junk@hotmail.com"
+      "email": "eunk@hotmail.com"
     },
     "address1": {
       "name": "Billy Bobob Brain",
-      "address": "Music Row",
+      "address": "941 Music Row, Memphis, TN 91451",
       "telephone": "1-800-406-6120",
-      "email": "junk1@hotmail.com"
+      "email": "eunk1@hotmail.com"
     },
     "address2": {
       "name": "Carter Hall",
-      "address": "Research Lab",
+      "address": "1231 Research Way, Gary, IN 45111",
       "telephone": "415-174-2965",
-      "email": "junk2@hotmail.com"
+      "email": "kunk2@hotmail.com"
     },
     "address3": {
-      "name": "Hal Jordan",
-      "address": "Airforce Base",
-      "telephone": "994-174-2965",
-      "email": "junk3@hotmail.com"
+      "name": "John Jonzz",
+      "address": "1 Mars Way, Planet Mars",
+      "telephone": "235-231-2552",
+      "email": "gunk4@hotmail.com"
+    },
+    "address4": {
+      "name": "Clark Kent",
+      "address": "4235 Daily Rd, Metropolis 11111",
+      "telephone": "745-534-5965",
+      "email": "zunk5@hotmail.com"
+    },
+    "address5": {
+      "name": "Bruce Wayne",
+      "address": "2526 Wanye Dr, Gotham City, GF 074144",
+      "telephone": "462-122-9965",
+      "email": "yunk6@hotmail.com"
+    },
+    "address6": {
+      "name": "Dick Grayson",
+      "address": "2526 Wanye Dr, Gotham City, GF 074144",
+      "telephone": "545-345-2774",
+      "email": "funk7@hotmail.com"
+    },
+    "address7": {
+      "name": "Ray Palmer",
+      "address": "4223 Professor Row, Ivy University, OH 33134",
+      "telephone": "406-174-1111",
+      "email": "aunk8@hotmail.com"
     }
   }
 }
