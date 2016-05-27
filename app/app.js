@@ -14,5 +14,9 @@ app.config(function($routeProvider) {
       templateUrl: "partials/addressesNewContact.html",
       controller: "newEntryController"
     }).
+    when("/addresses/:addressID", {
+      templateUrl: "partials/addressesNewContact.html",
+      controller: "editEntryController"
+    }).
     otherwise("/addresses/list");
 });

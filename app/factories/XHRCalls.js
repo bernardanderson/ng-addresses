@@ -35,6 +35,12 @@ app.factory('XHRCalls', function($q, $http, AddressListService){
             sentData.id = returnedItem.name;
             AddressListService.updateAddressArray(sentData);
             resolve();
+
+            // a "PUT" is requested, the old entry is removed from the array and updated entry is added.
+          } else if (xhrMethod === "put") {
+            console.log(returnedItem);
+            AddressListService.deleteAddressArrayItem(returnedItem.id);
+            AddressListService.updateAddressArray(returnedItem);
           }
         }).error(function(error) {
           reject(error);

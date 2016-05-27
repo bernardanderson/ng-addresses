@@ -1,17 +1,10 @@
 "use strict";
 
-app.controller("newEntryController", function($scope, $location, AddressListService, XHRCalls){
+app.controller("editEntryController", function($scope, $location, $routeParams, AddressListService, XHRCalls){
 
-  $scope.pageTitle = "Add New Address";
-  $scope.submitButtonText = "Submit New Address";
-
-// Builds a blank newAddressObject in case the user leaves a field blank
-  $scope.newAddressObject = {
-    name: null,
-    address: null,
-    telephone: null,
-    email: null
-  };
+  $scope.pageTitle = "Edit Current Address";
+  $scope.submitButtonText = "Update Address";
+  $scope.submitButtonFunction = "updateAddress()";
 
 // This contains the data for the input fields for the new address page. An ng-repeat builds part of that page from this data
   $scope.entryItems = [
@@ -41,11 +34,13 @@ app.controller("newEntryController", function($scope, $location, AddressListServ
     inputWidth: 3
   }];
 
+  $scope.newAddressObject = AddressListService.getAddressArrayItem($routeParams.addressID);
+
 // When the submit button is clicked this adds the information to local AddressArray, the database, clears the input fields and
 //  then sends the user back to the address list. 
   $scope.addNewAddress = function() {
-    AddressListService.updateAddressArray($scope.newAddressObject);
-    XHRCalls.xhrAddresses("", "post", $scope.newAddressObject);
+    let updateItemID = $routeParams.addressID
+    XHRCalls.xhrAddresses(updateItemID, "put", $scope.newAddressObject);
     $scope.newAddressObject = "";
     $location.path('#/addresses/list');
   };

@@ -31,6 +31,17 @@ app.factory('AddressListService', function(){
           };
         }
       }
+    },
+
+    // This pulls a single address from the private local array based on it's .id
+    getAddressArrayItem: function(sentID) {
+      for (var i = 0; i < this.currentAddresses.length; i++) {
+        for (var key in this.currentAddresses[i] ) {
+          if (this.currentAddresses[i][key] === sentID) {
+            return this.currentAddresses[i];
+          };
+        }
+      }
     }
   };
 });

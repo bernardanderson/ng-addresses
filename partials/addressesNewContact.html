@@ -1,15 +1,22 @@
 <div class="panel panel-default">
-  <div class="panel-heading">Enter a New Contact</div>
-    <div class="panel-body">
-      <form>
-        <div class="form-group" ng-repeat="inputItem in entryItems">
-          <div class="col-xs-{{inputItem.inputWidth}}">
-          <!-- The ng-class checks to see if the length of the input field is nothing (or something) and assigns the appropriate BootStrap class for coloring-->
-            <input class="form-control" type="{{inputItem.inputType}}" placeholder="{{inputItem.inputPlaceholder}}" ng-model="newAddressObject[inputItem.fieldVariable]" ng-class="!newAddressObject[inputItem.fieldVariable].length ? 'alert-danger' : 'alert-success'" />
-          </div>
+  <div class="panel-heading">{{pageTitle}}</div>
+  <div class="panel-body">
+    <div class="row">
+      <div ng-repeat="entryHeading in entryItems">
+        <div class="col-xs-{{entryHeading.inputWidth}} text-center">
+          <h4>{{entryHeading.inputTitle}}</h4>
         </div>
-        <button class="btn btn-default" ng-click="addNewAddress()">Submit</button>
-      </form>
+      </div>
     </div>
+
+  <form>
+    <div class="form-group" ng-repeat="inputItem in entryItems">
+      <div class="col-xs-{{inputItem.inputWidth}}">
+      <!-- The ng-class checks to see if the length of the input field is nothing (or something) and assigns the appropriate BootStrap class for coloring-->
+        <input class="form-control" type="{{inputItem.inputType}}" placeholder="{{inputItem.inputPlaceholder}}" ng-model="newAddressObject[inputItem.fieldVariable]" ng-class="!newAddressObject[inputItem.fieldVariable].length ? 'alert-danger' : 'alert-success'" />
+      </div>
+    </div>
+    <button class="btn btn-default" ng-click="addNewAddress()">{{submitButtonText}}</button>
+  </form>
   </div>
 </div>
